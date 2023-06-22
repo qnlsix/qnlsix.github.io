@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)file:///C:/Users/smf08/Downloads/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+   	<title> 图片转 BASE64 编码 | 菜鸟工具</title>
+     	<meta name="robots" content="max-image-preview:large">
+<link rel="stylesheet" id="wp-block-library-css" href="./index_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpProQuiz_front_style-css" href="./index_files/wpProQuiz_front.min.css" type="text/css" media="all">
+<link rel="canonical" href="./index_files/saved_resource">
+<meta name="keywords" content="图片转 BASE64 编码">
+<meta name="description" content="Base64 是一种基于 64 个可打印字符来表示二进制数据的表示方法。 Base64 常用于在通常处理文本数据的场合，表示、传输、存储一些二进制数据，包括 MIME 的电子邮件及 XML 的一些复杂数据。 图片的 BASE64 编码就是可以将一幅图片数据编码成一串字符串，使用该字符串代替图片地址，从而不需要使用图片的 URL 地址。 图片转 BASE64 编码工具提供了 PNG 转换 Base64，GIF 转换 Base64，JPEG..">
+  <link rel="shortcut icon" href="https://static.runoob.com/images/c-runoob-logo.ico">  
+			
+    	
+    <!-- Bootstrap Core CSS -->
+	<link rel="stylesheet" href="./index_files/bootstrap.min.css">
+
+   <!-- Custom Fonts -->
+   <link href="./index_files/all.min.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]> 
+        <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- PHP 代码 -->
+    <link rel="stylesheet" href="./index_files/style.css">
+
+    <script src="./index_files/f.txt" id="google_shimpl"></script><script src="./index_files/hm.js.下载"></script><script src="./index_files/hm.js(1).下载"></script><script src="./index_files/jquery.min.js.下载"></script>
+  <script src="./index_files/clipboard.min.js.下载"></script>
+
+<meta http-equiv="origin-trial" content="A7CQXglZzTrThjGTBEn1rWTxHOEtkWivwzgea+NjyardrwlieSjVuyG44PkYgIPGs8Q9svD8sF3Yedn0BBBjXAkAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A3vKT9yxRPjmXN3DpIiz58f5JykcWHjUo/W7hvmtjgh9jPpQgem9VbADiNovG8NkO6mRmk70Kex8/KUqAYWVWAEAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A4A26Ymj79UVY7C7JGUS4BG1s7MdcDokAQf/RP0paks+RoTYbXHxceT/5L4iKcsleFCngi75YfNRGW2+SpVv1ggAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="></head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark" style="background: #393D49;"> 
+  
+  <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+</nav>
+<script>
+var is_home = false;
+</script>
+<style>
+.runoob-page-content {
+    margin: 0 20px;
+}
+</style>
+<div class="runoob-page-content">	
+<style type="text/css">
+
+
+#base64-buttons-container {  
+	margin:0 auto;
+	width:80%;
+	height:auto;
+}
+.editorMain{
+      margin:4% auto 2% auto;
+      width:80%;
+      height:60%;
+      border:2px dashed #333;
+      border-radius:10px;
+      -webkit-border-radius:10px;
+      text-align:center;
+      padding:30px 0 80px 0;
+      text-align:center;
+      cursor:pointer;
+}
+
+.fileInputStyle{
+      position:absolute;
+      left:-9999px;
+      top:-9999px;
+      z-index:-9999;
+}
+</style>
+
+<div class="row">
+
+	<div class="col-md-12">
+		<div class="card">
+					<div id="compiler" class="card-header">
+			<strong style="font-size: 16px"><i class="fa fa-image"></i> 图片转 BASE64 编码</strong>
+			</div>
+			<div class="card-body">
+			
+              <div class="form-group">
+                <div class="row">
+					<div class="col-md-12">
+		                 <div class="picEditor">
+						    <div class="editorMain" id="drop_area">
+						    <i class="fa fa-cloud-upload-alt" style="font-size:64px;"></i><br>
+						      <h4>拖曳图片至此处，将图片转为base64格式<br>
+						      <small>只支持单图上传</small></h4>
+						    </div>
+						    <input type="file" id="fileInput" class="fileInputStyle">
+						    <section class="editorResult">
+						      <ul class="editorResult_list"></ul>
+						    </section>
+						  </div>
+					</div>
+					
+             
+                </div>
+                
+                
+               
+                <div class="row" id="manual" style="display:none;">
+	               <div class="col-md-12 mb-2">
+				        <div id="base64-buttons-container">
+				       		<form class="form-inline" role="form">
+							   <button type="button" class="btn btn-primary">预览</button>&nbsp;&nbsp;
+							   <div class="checkbox" style="font-size: 18px;">
+							      <label>
+							      <input type="checkbox"> 显示 HTML/CSS 代码
+							      </label>
+							   </div>
+							      
+							</form>
+              <div class="col-md-12"><img src="./index_files/saved_resource" class="img-rounded rounded mx-auto  mb-2 mt-2" style="display:none;"> </div>
+				    </div>
+    				</div>
+    			</div>
+                 <div class="row">
+               		
+	                <div class="col-md-12">
+                    <div class="alert alert-success" style="display:none;">复制完成。</div>
+		                <div class="resultPlan">
+		  				      </div>
+	                </div>
+                  <div class="col-md-12" id="html-usage" style="display:none;">
+                      <p>HTML 代码:</p>
+                      <pre class="bs-example html-usage prettyprint"></pre><figure class="highlight"><pre class="prettyprint"><code id="copycode3"><button type="button" class="btn btn-warning"><i class="fa fa-copy" aria-hidden="true"></i> 复制代码</button></code></pre></figure>
+                  </div>
+                  <div class="col-md-12" id="css-usage" style="display:none;">
+                      <p>CSS 代码:</p>
+                      <pre class="bs-example css-usage prettyprint"></pre><figure class="highlight"><pre class="prettyprint"><code id="copycode2"><button type="button" class="btn btn-warning"><i class="fa fa-copy" aria-hidden="true"></i> 复制代码</button></code></pre></figure>
+                  </div>
+	               
+	              </div>
+                </div>
+              </div>
+             
+             
+            
+			</div>
+			
+		</div>
+	
+	
+	<div class="col-md-12 mt-2">
+		<div id="about" class="card">
+			
+			
+        </div>
+	   
+		
+		</div>
+	</div>
+</div>
+<script>
+
+function generateMixed(n) {
+    var chars = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+    var res = "";
+    for(var i = 0; i < n ; i ++) {
+      var id = Math.ceil(Math.random()*35);
+      res += chars[id];
+    }
+    return res;
+}
+
+$(function(){
+  //阻止浏览器默认行。
+  $(document).on({
+    dragleave:function(e){		//拖离
+      e.preventDefault();
+    },
+    drop:function(e){			//拖后放
+      e.preventDefault();
+    },
+    dragenter:function(e){		//拖进
+      e.preventDefault();
+    },
+    dragover:function(e){		//拖来拖去
+      e.preventDefault();
+    }
+  });
+  $(".btn-primary").on("click", function() {  $(".img-rounded").toggle(); } );
+  function setUpload(fileList){
+    var myfile = fileList[0],
+    reader = new FileReader();
+    var resultPlan = '<pre class="resultBox bs-example" ></pre><figure class="highlight"><pre><code id="copycode"><button type="button" class="btn btn-warning"><i class="fa fa-copy" aria-hidden="true"></i> 复制代码</button></code></pre></figure>';
+    var len = $(".resultBox").length;
+    reader.readAsDataURL(myfile);
+    reader.onload = function(e) {
+      len <= 0 && $(resultPlan).appendTo(".resultPlan");
+      $(".resultBox").html(e.target.result);
+      $(".img-rounded").attr("src", e.target.result);
+    }
+    $("input[type='checkbox']").prop('disabled', false);
+    $("input[type='checkbox']").prop('checked', false);
+    $("#manual").show();
+  };
+  function dragUpload(e){
+    e.preventDefault();
+    setUpload(e.dataTransfer.files);
+  }
+
+  function clickUpload(){
+    var fileinput = $("#fileInput");
+    fileinput.trigger("click");
+    fileinput.on("change",function(e){
+      e.preventDefault();
+      setUpload(this.files);
+    });
+  };
+
+  var box = document.getElementById('drop_area'); //拖拽区域
+
+  box.addEventListener("drop", dragUpload, false);
+  box.addEventListener("click", clickUpload, false);
+  
+  $("input[type='checkbox']").click(function() {
+    var base64Data = $(".resultBox").html();
+    if( base64Data == ""  || typeof(base64Data)=="undefined"){
+    return;	
+  }
+    data = base64Data;
+    if( $(this).prop("checked")){
+      data = "background-image: url(\"" + data + "\");";
+      $(".css-usage").html(data);
+      $("#css-usage").show();
+      data_html = "&lt;img src=\"" + base64Data + "\" &gt;";
+      $(".html-usage").html(data_html);
+      $("#html-usage").show();
+      
+    $(this).prop('disabled', true);
+  }
+  })
+  $(".btn-success").click(function() {
+    var base64Data = $(".resultBox").val();
+    if( base64Data == "" || typeof(base64Data)=="undefined" ){
+    return;	
+  }
+    
+    $(".img-rounded").toggle(500);
+    $(".img-rounded").css({"margin-bottom":"12px"});
+  
+  })
+});
+new ClipboardJS('#copycode2', {
+	text: function(trigger) {
+		return $(".css-usage").html()
+	}
+}).on('success', function(e) {
+  $(".alert-success").show().delay(5000).fadeOut();
+    e.clearSelection();
+}).on('error', function(e) {
+    alert('Error!');
+});
+new ClipboardJS('#copycode', {
+	text: function(trigger) {
+		return $(".resultBox").html()
+	}
+}).on('success', function(e) {
+  $(".alert-success").show().delay(5000).fadeOut();
+    e.clearSelection();
+}).on('error', function(e) {
+    alert('Error!');
+});
+
+new ClipboardJS('#copycode3', {
+	text: function(trigger) {
+		return $(".html-usage").html().replace('&lt;', '<').replace('&gt;', '>')
+	}
+}).on('success', function(e) {
+   $(".alert-success").show().delay(5000).fadeOut();
+    e.clearSelection();
+}).on('error', function(e) {
+    alert('Error!');
+});
+
+</script>
+	
+
+      
+
+<div class="row " style="margin: 20px 10px;">
+<div class="col-md-12 ">
+
+<div class="text-center mt-3 shadow">
+<script async="" src="./index_files/f(1).txt"></script>
+<!-- 移动版 自动调整 -->
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-5751451760833794" data-ad-slot="1691338467" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><div id="aswift_0_host" style="border: none; height: 280px; width: 1200px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+
+</div>
+
+<!-- Footer -->
+<footer class="page-footer  pt-4">
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">Copyright © 
+    <a href="https://www.runoob.com/"> 菜鸟教程</a> 2023 备案号：<a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn/">闽ICP备15012807号-1</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
+
+
+
+
+
+
+
+
+<script src="./index_files/bootstrap.bundle.min.js.下载" crossorigin="anonymous"></script>
+<script>
+
+
+$(function() {
+	//代码高亮
+	$('pre').each(function() {
+		if(!$(this).hasClass("prettyprint")) {
+			$(this).addClass("prettyprint");
+		}
+	});
+ 
+  $('[data-toggle="tooltip"]').tooltip();
+
+  if(is_home) {
+    $(window).scroll(function () {
+      var _stop = $(window).scrollTop();
+      if(_stop>=100) {
+        $("#go-top").fadeIn();
+        
+      }else {
+        $("#go-top").fadeOut();
+      }
+    });
+    _current_hash = window.location.hash;
+    console.log(_current_hash);
+    if(_current_hash) {
+     
+        var $targetEle = $(_current_hash);
+        var sTop =  $targetEle.offset().top;
+        $('html, body').stop().animate({
+            'scrollTop':sTop-100
+        }, 300, 'swing', function (e) {
+         // window.location.hash = targetEle;
+        }); 
+        console.log(sTop);
+        return false;
+     
+    }
+    $("#go-top").click(function(event){	
+     $('html,body').animate({scrollTop:0}, 100);
+     return false;
+    });
+    // 导航
+    var _html_nav='<a class="nav-link active" href="javascript:void();"><i class="fa fa-compass" aria-hidden="true"></i> 快速导航</a>';
+    var _html_right_nav = '<button class="dropdown-item" href="#"><i class="fa fa-th-list" aria-hidden="true"></i> 快速导航</button><div class="dropdown-divider"></div>';
+    var _html_left_nav = '<dt><span class="show-list"></span></dt>';
+    for (var i=0;i<data_hrefs.length;i++)
+    { 
+        id="runoob-goto-" + data_hrefs[i];
+        _html_nav += '<a class="nav-link" href="#'+id+'">'+$("#"+id).data("text")+'</a>';
+        _html_right_nav +='<button class="dropdown-item" onclick="location.href=\'#'+id+'\'" type="button"><i class="fa fa-caret-right" aria-hidden="true"></i> '+$("#"+id).data("text")+'</button>' ;
+        _html_left_nav +='<dd><a href="#'+id+'" class="auto-scroll" data-offset="98" data-speed="500">'+$("#"+id).data("text")+'</a></dd>';
+    }
+    $(".nav-underline").html(_html_nav);
+    $("#right_nav_list").html(_html_right_nav);
+    $("#goto").html(_html_left_nav);
+    if($(".nav-scroller").is(":visible")){
+      $('a[href^="#"]').on('click', function (e) {
+          e.preventDefault();
+          $(this).addClass('nav-underline-active');
+          $(this).siblings().removeClass('nav-underline-active');
+          var targetEle = this.hash;
+          var $targetEle = $(targetEle);
+          var sTop =  $targetEle.offset().top;
+          $('html, body').stop().animate({
+              'scrollTop':sTop-100
+          }, 300, 'swing', function () {
+          //   window.location.hash = targetEle;
+          });
+      });
+    } else {
+      $('a[href^="#"]').on('click', function (e) {
+          e.preventDefault();
+          var targetEle = this.hash;
+          var $targetEle = $(targetEle);
+          var sTop =  $targetEle.offset().top;
+          $('html, body').stop().animate({
+              'scrollTop':sTop-56   
+          }, 300, 'swing', function () {
+          //   window.location.hash = targetEle;
+          });
+      });
+    }
+  } else { 
+    $("#top").hide();
+  }
+  
+
+  // search
+  if($('#search-name').length){
+      var _href=  $("#search-name .nav-underline-active").attr("href");
+  }
+ 
+  $('#search-name li a').each(function(){
+    $(this).on("click", function(e){
+      e.preventDefault();
+      _href = $(this).attr('href');
+      $(this).removeClass("text-muted").addClass("nav-underline-active");
+      $(this).parent().siblings().find("a").addClass("text-muted").removeClass("nav-underline-active");
+    //  console.log(_href);
+    });
+    
+  })
+
+  $('#search-button').on("click", function(e){
+   // console.log(_href);
+    _hmt.push(['_trackEvent', 'Search', 'Click', '搜索工具']);
+    keyword = $(".search").find("input:text").val();
+    window.open(_href + keyword, '_blank');
+  });
+  $(".search").find("input:text").keypress(function (e) {
+    var key = e.which;
+    if(key == 13)  // the enter key code
+    {
+      window.open(_href + $(this).val(), '_blank'); 
+      return false;  
+    }
+  });  
+});
+
+(function($){ 
+  var p=$('.runoob-item-index'); 
+  if(p.length<1) return;
+  var arr=[];
+  function part_offset_top() {
+    p.each(function () {
+      var of=$(this).offset();
+      arr.push(Math.floor(of.top));
+    });
+  }
+  function goto_current(index) {
+    var a=$('#goto dd');
+    var b=$('#goto dt');
+    if(a.length<1) return;
+    var h=a.outerHeight();
+    if (!a.eq(index).hasClass('current')) {
+      a.removeClass('current');
+      a.eq(index).addClass('current');
+     // console.log(index)
+      b.animate({
+        'top': h*index+(a.outerHeight()-b.outerHeight())/2+1
+      },50);
+    }
+  }
+  function window_scroll() {
+    var st=window.pageYOffset
+    			|| document.documentElement.scrollTop
+    			|| document.body.scrollTop
+    			|| 0;
+    var limit=Math.ceil(st+98);
+    var index=0;
+    for (var i = 0; i < arr.length; i++) {
+      if (limit>=arr[i]) {
+        index=i;
+      }else{
+        break;
+      }
+    }
+    if (index<0) index=0;
+    if (!p.eq(index).hasClass('current')) {
+      p.removeClass('current');
+      p.eq(index).addClass('current');
+      goto_current(index);
+    }
+  }
+  part_offset_top();
+  setTimeout(window_scroll,0);
+  $(window).on('scroll',window_scroll);
+})(jQuery);
+/* --侧边栏滚动时固定-- */
+(function($){
+  var s=$('.sidebar');
+  
+  if(s.length<1) return;
+  var c=s.children('.content-sidebar');
+  if(c.length<1) return;
+  var $parent=s.parent();
+  if($parent.length<1) return;
+  var start=0,stop=0,cHeight=0;
+  function init() {
+    var soffset=s.offset();
+    start=soffset.top;
+    stop=start+$parent.height();
+    cinit();
+  }
+  function cinit() {
+    cHeight=c.height();
+  }
+  function cClear(){
+    c.removeClass('fixed');
+    c.removeClass('absolute');
+  }
+  function check_scroll(){
+    var st=window.pageYOffset
+    			|| document.documentElement.scrollTop
+    			|| document.body.scrollTop
+    			|| 0;
+    if (st<=start) {
+      cClear();
+    }
+    if (st>=stop-cHeight) {
+      c.removeClass('fixed');
+      c.addClass('absolute');
+      return;
+    }
+    if (st<stop-cHeight && st>start) {
+      c.removeClass('absolute');
+      c.addClass('fixed');
+    }
+  }
+  
+  init();
+  check_scroll();
+  $(window).on('resize',init);
+  $(window).on('scroll',check_scroll);
+})(jQuery);
+
+(function () {
+  'use strict'
+
+  document.querySelector('#navbarSideCollapse').addEventListener('click', function () {
+    document.querySelector('.offcanvas-collapse').classList.toggle('open')
+  })
+})()
+</script>
+<div style="display:none;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?68c6d4f0f6c20c5974b17198fa6fd40a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</div>
+
+
+<div class="modal fade" id="tg-1" tabindex="-1" role="dialog" aria-labelledby="tg-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title font-weight-bold text-danger"><img style="width:32px" src="./index_files/red-p.jpeg"> 饿了么天天有红包</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="text-center">
+        <img src="./index_files/elm-hb.jpeg" class="img-fluid">
+      </div>
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><div id="aswift_1_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins></body><iframe id="google_esf" name="google_esf" src="./index_files/zrt_lookup.html" style="display: none;"></iframe></html>
